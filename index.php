@@ -189,6 +189,9 @@ function redirectToDashboard(string $role): void
 
             <button type="submit" class="btn-login">Sign In</button>
         </form>
+        <p style="text-align:center;margin-top:20px;font-size:0.85rem;color:#94a3b8;">
+            Don't have an account? <a href="register.php" style="color:#818cf8;text-decoration:none;font-weight:600;">Create Account</a>
+        </p>
     </div>
 </body>
 </html>
