@@ -45,16 +45,16 @@ function redirectToDashboard(string $role): void
 {
     switch ($role) {
         case 'main':
-            header('Location: /main/dashboard.php');
+            header('Location: /acadverify/main/dashboard.php');
             break;
         case 'assistant':
-            header('Location: /assistant/dashboard.php');
+            header('Location: /acadverify/assistant/dashboard.php');
             break;
         case 'student':
-            header('Location: /student/dashboard.php');
+            header('Location: /acadverify/student/dashboard.php');
             break;
         default:
-            header('Location: /index.php');
+            header('Location: /acadverify/index.php');
             break;
     }
     exit;
@@ -173,7 +173,7 @@ function redirectToDashboard(string $role): void
             <div class="error-msg"><?= htmlspecialchars($error) ?></div>
         <?php endif; ?>
 
-        <form method="POST" action="index.php">
+        <form method="POST" action="/acadverify/index.php">
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required

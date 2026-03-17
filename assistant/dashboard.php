@@ -363,7 +363,7 @@ $pendingAssignments = $stmtPending->fetchAll();
                 <span class="bell-badge"><?= $unreadCount > 9 ? '9+' : $unreadCount ?></span>
             <?php endif; ?>
         </div>
-        <a href="/logout.php" class="logout-link">Logout</a>
+        <a href="/acadverify/logout.php" class="logout-link">Logout</a>
     </div>
 </nav>
 
@@ -447,7 +447,7 @@ $pendingAssignments = $stmtPending->fetchAll();
 
                     <!-- Photo preview -->
                     <?php if ($pa['file_path']): ?>
-                        <img src="/<?= htmlspecialchars($pa['file_path']) ?>"
+                        <img src="/acadverify/<?= ltrim(htmlspecialchars($pa['file_path']), '/') ?>"
                              alt="Submission"
                              class="photo-preview"
                              onclick="openLightbox(this.src)">

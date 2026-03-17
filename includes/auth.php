@@ -23,7 +23,7 @@ function requireLogin(?string $required_role = null): void
 {
     // Not logged in at all
     if (!isset($_SESSION['user_id'])) {
-        header('Location: /index.php');
+        header('Location: /acadverify/index.php');
         exit;
     }
 

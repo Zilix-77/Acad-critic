@@ -343,7 +343,7 @@ $exams = $stmtExam->fetchAll();
                 <span class="bell-badge"><?= $unreadCount > 9 ? '9+' : $unreadCount ?></span>
             <?php endif; ?>
         </div>
-        <a href="/logout.php" class="logout-link">Logout</a>
+        <a href="/acadverify/logout.php" class="logout-link">Logout</a>
     </div>
 </nav>
 
@@ -428,9 +428,9 @@ $exams = $stmtExam->fetchAll();
                     if ($isLocked) {
                         $actionHtml = '<span class="locked-hint">🔒 Complete Exp ' . ($order - 1) . ' first</span>';
                     } elseif ($roughStatus === 'signed' && $fairStatus !== 'submitted') {
-                        $actionHtml = '<a href="/student/upload.php?id=' . $exp['assignment_id'] . '&type=fair" class="btn btn-success">Upload Fair</a>';
+                        $actionHtml = '<a href="/acadverify/student/upload.php?id=' . $exp['assignment_id'] . '&type=fair" class="btn btn-success">Upload Fair</a>';
                     } elseif ($roughStatus === null || $roughStatus === 'pending') {
-                        $actionHtml = '<a href="/student/upload.php?id=' . $exp['assignment_id'] . '&type=rough" class="btn btn-primary">Upload Rough</a>';
+                        $actionHtml = '<a href="/acadverify/student/upload.php?id=' . $exp['assignment_id'] . '&type=rough" class="btn btn-primary">Upload Rough</a>';
                     } else {
                         $actionHtml = '<span class="pill pill-gray">Done</span>';
                     }
@@ -500,9 +500,9 @@ $exams = $stmtExam->fetchAll();
                             <div class="feedback-text"><?= htmlspecialchars($notes) ?></div>
                         <?php endif; ?>
                     <?php elseif ($status === 'rejected'): ?>
-                        <a href="/student/submit.php?id=<?= $asgn['assignment_id'] ?>" class="btn btn-primary">Resubmit</a>
+                        <a href="/acadverify/student/submit.php?id=<?= $asgn['assignment_id'] ?>" class="btn btn-primary">Resubmit</a>
                     <?php elseif ($status === null): ?>
-                        <a href="/student/submit.php?id=<?= $asgn['assignment_id'] ?>" class="btn btn-primary">Submit</a>
+                        <a href="/acadverify/student/submit.php?id=<?= $asgn['assignment_id'] ?>" class="btn btn-primary">Submit</a>
                     <?php else: ?>
                         <span class="pill pill-gray">Under Review</span>
                     <?php endif; ?>

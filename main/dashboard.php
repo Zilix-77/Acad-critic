@@ -384,7 +384,7 @@ foreach ($exams as $ex) {
                 <span class="bell-badge"><?= $unreadCount > 9 ? '9+' : $unreadCount ?></span>
             <?php endif; ?>
         </div>
-        <a href="/logout.php" class="logout-link">Logout</a>
+        <a href="/acadverify/logout.php" class="logout-link">Logout</a>
     </div>
 </nav>
 
@@ -562,7 +562,7 @@ foreach ($exams as $ex) {
                         <span class="due-pill pill" data-due="<?= htmlspecialchars($mr['due_date'] ?? '') ?>"><?= $mr['due_date'] ?: '—' ?></span>
                     </div>
                     <?php if ($mr['file_path']): ?>
-                        <img src="/<?= htmlspecialchars($mr['file_path']) ?>" alt="Submission" class="photo-preview" onclick="openLightbox(this.src)">
+                        <img src="/acadverify/<?= ltrim(htmlspecialchars($mr['file_path']), '/') ?>" alt="Submission" class="photo-preview" onclick="openLightbox(this.src)">
                     <?php endif; ?>
                     <form method="POST">
                         <input type="hidden" name="action" value="submit_mark">
